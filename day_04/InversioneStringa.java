@@ -11,14 +11,16 @@ public class InversioneStringa {
         Scanner scanner = new Scanner(System.in);
 
         // Input della stringa
-        System.out.print("Inserisci una stringa: ");
+        System.out.print("Inserisci una stringa a Invertire: ");
         String testo = scanner.nextLine();
-
-        String invertita = "";
-
+        //Tennis
+        //012345
+        
+        String invertita = ""; //Inizializamo La Stringa Vuota
+                   
         // Ciclo per costruire la stringa invertita
         for (int i = testo.length() - 1; i >= 0; i--) {
-            invertita += testo.charAt(i);
+        	  invertita += testo.charAt(i);
         }
 
         // Stampa la stringa invertita

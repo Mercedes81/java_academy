@@ -1,9 +1,9 @@
-package day_04;
+package day_05;
 
 import java.util.Scanner;
 
 public class Palindromo {
-	  
+
 	public static void main(String[] args) {
 		   //TODO Auto-Generad method stub
 	   
@@ -16,12 +16,14 @@ public class Palindromo {
 		   
 		   int intero = 5/2;
 		   System.out.println("intero" +intero);
-		   for (int i = 0; i < frase.length()/2; i++);
-	if (!(frase.charAt(i)== frase.charAt(frase.length() -1 -i)));
+		   for (int i = 0; i < frase.length()/2; i++) {
+			;
+		}
+	if (1(frase.charAt(i)== frase.charAt(frase.length() -1 -i))) {
+		
+	}
 	
-	
-		   } 
- 
-	System.out.println("E Palindromo" );
+	   }
+
+	System.out.println("E Palindromo");
 }
-	
