@@ -3,27 +3,39 @@ package day_05;
 import java.util.Scanner;
 
 public class Palindromo {
-
 	public static void main(String[] args) {
-		   //TODO Auto-Generad method stub
-	   
-		   Scanner scanner = new Scanner(System.in);
-		   System.out.println("Inserisce La Frase: ");
-		   String frase = scanner.nextLine();
-		        
-		 //radar
-		//01234
-		   
-		   int intero = 5/2;
-		   System.out.println("intero" +intero);
-		   for (int i = 0; i < frase.length()/2; i++) {
-			;
-		}
-	if (1(frase.charAt(i)== frase.charAt(frase.length() -1 -i))) {
-		
-	}
-	
-	   }
+		Scanner scanner = new Scanner(System.in);
 
-	System.out.println("E Palindromo");
+		// Richiesta dell'input all'utente
+		System.out.print("Inserisci una stringa: ");
+		String input = scanner.nextLine();
+
+		// Rimuove spazi e converte in minuscolo per una verifica più accurata
+		String pulita = input.replaceAll("\\s+", "").toLowerCase();
+
+		// Verifica se la stringa è un palindromo
+		if (èPalindromo(pulita)) {
+			System.out.println("La stringa è un palindromo.");
+		} else {
+			System.out.println("La stringa NON è un palindromo.");
+		}
+
+		scanner.close();
+	}
+
+	// Metodo che verifica se una stringa è palindroma
+	public static boolean èPalindromo(String str) {
+		int inizio = 0;
+		int fine = str.length() - 1;
+
+		while (inizio < fine) {
+			if (str.charAt(inizio) != str.charAt(fine)) {
+				return false;
+			}
+			inizio++;
+			fine--;
+		}
+
+		return true;
+	}
 }
