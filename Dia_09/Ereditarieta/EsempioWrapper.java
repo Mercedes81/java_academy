@@ -1,22 +1,22 @@
 package Dia_09.Ereditarieta;
 
 public class EsempioWrapper {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Double d = 34.6;
 		Integer i = 10;
 		Number[] numeri = { d, i };
-		int somma = 0;
+		double somma = 0;
 		for (Number n : numeri) {
-			if(n isInstance(Double)) {
-				;
-			}
-		}
-		{
+			if (n instanceof Double) {
+				System.out.println("è una double " + n);
 
-			somma + = n;
-			System.out.println(n);
+			} else if (n instanceof Integer) {
+				System.out.println("è un' integer " + n);
+				double x = (Integer) n;
+			}
+			somma += n.doubleValue();
 		}
+		System.out.println(somma);
+
 	}
 }
