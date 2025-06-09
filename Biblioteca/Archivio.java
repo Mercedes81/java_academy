@@ -1,4 +1,3 @@
-
 package Biblioteca;
 
 import java.util.ArrayList;
@@ -17,7 +16,7 @@ public class Archivio {
 	}
 
 	public void nuovoLibro(String unTitolo) {
-		libri.add(new Libro(unTitolo, null));
+		libri.add(new Libro(unTitolo, null, null, null));
 	}
 
 	public void nuovoUtente(String unNome, String unCognome) {

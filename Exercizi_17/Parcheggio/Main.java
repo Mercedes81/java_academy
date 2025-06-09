@@ -2,8 +2,6 @@ package Exercizi_17.Parcheggio;
 
 import java.util.ArrayList;
 
-import Exercizi_17.Parcheggio.ClasseVettura.Vettura;
-
 public class Main {
 	public static void main(String[] args) {
 		Parcheggio parcheggio = new Parcheggio(3);

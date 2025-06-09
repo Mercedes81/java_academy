@@ -10,3 +10,5 @@ git push -u origin main
 git remote add origin https://github.com/Mercedes81/java_academy.git
 git branch -M main
 git push -u origin maingit add .
+
+https://github.com/Mercedes81/java_academy.git

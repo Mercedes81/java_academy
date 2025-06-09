@@ -1,6 +1,6 @@
 package Biblioteca;
 
-
+public class Libro {
 	public String isbn;
 	private String titolo;
 	private Abbonato utente;

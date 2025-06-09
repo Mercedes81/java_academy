@@ -7,4 +7,9 @@ public class Frutta {
 
 	}
 
+	public void scriviChiSei() {
+		// TODO Auto-generated method stub
+
+	}
+
 }

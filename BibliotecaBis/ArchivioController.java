@@ -1,8 +1,8 @@
 package BibliotecaBis;
 
-import Biblioteca.Abbonato;
-
 import java.time.LocalDateTime;
+
+import Biblioteca.Abbonato;
 
 public class ArchivioController {
 	private static Prestito[] prestiti = new Prestito[100];
@@ -62,8 +62,11 @@ public class ArchivioController {
 
 	public static String restituzione(Abbonato abbonato, Libro libro) {
 		if (abbonato != null && libro != null) {
+
 			for (int i = 0; i < prestiti.length; i++) {
+
 				if (prestiti[i].getAbbonato().getCf() == abbonato.getCf()
+
 						&& prestiti[i].getLibro().getIsbn() == libro.getIsbn()) {
 					prestiti[i] = null;
 					return "Prestito chiuso";
@@ -76,5 +79,4 @@ public class ArchivioController {
 	public static int libriInPrestito() {
 		return prestiti.length;
 	}
-}
 }

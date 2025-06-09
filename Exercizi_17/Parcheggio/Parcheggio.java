@@ -1,7 +1,5 @@
 package Exercizi_17.Parcheggio;
 
-import Exercizi_17.Parcheggio.ClasseVettura.Vettura;
-
 /*Si desidera simulare un parcheggio a pagamento per autovetture. Si sviluppi 
 la classe Vettura, avente le variabili d’istanza private int targa, private short 
 oraArrivo, private short oraScadenza, dove le ore sono interi compresi tra 0 e 
@@ -21,89 +19,83 @@ più alto numero di ore di parcheggio pagato. Sviluppare tutti i metodi della
 classe. 
  * 
  */
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Parcheggio {
+	private int numPosti;
+	private int oraCorrente;
+	private ArrayList<Vettura> vetturePresenti;
+	private ArrayList<Vettura> vettureRimosse;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		import java.util.ArrayList;
-		import java.util.Iterator;
+	public Parcheggio(int numPosti) {
+		this.numPosti = numPosti;
+		this.oraCorrente = 0;
+		this.vetturePresenti = new ArrayList<>();
+		this.vettureRimosse = new ArrayList<>();
+	}
 
-		public class Parcheggio {
-		    private int numPosti;
-		    private int oraCorrente;
-		    private ArrayList<Vettura> vetturePresenti;
-		    private ArrayList<Vettura> vettureRimosse;
+	public boolean entraVettura(Vettura v) {
+		if (vetturePresenti.size() < numPosti) {
+			vetturePresenti.add(v);
+			return true;
+		}
+		return false;
+	}
 
-		    public Parcheggio(int numPosti) {
-		        this.numPosti = numPosti;
-		        this.oraCorrente = 0;
-		        this.vetturePresenti = new ArrayList<>();
-		        this.vettureRimosse = new ArrayList<>();
-		    }
+	public boolean esceVettura(Vettura v) {
+		return vetturePresenti.remove(v);
+	}
 
-		    public boolean entraVettura(Vettura v) {
-		        if (vetturePresenti.size() < numPosti) {
-		            vetturePresenti.add(v);
-		            return true;
-		        }
-		        return false;
-		    }
+	public void aggiornaOra() {
+		oraCorrente = (oraCorrente + 1) % 24;
+		Iterator<Vettura> iterator = vetturePresenti.iterator();
+		while (iterator.hasNext()) {
+			Vettura v = iterator.next();
+			if (v.getOraScadenza() <= oraCorrente) {
+				vettureRimosse.add(v);
+				iterator.remove();
+			}
+		}
+	}
 
-		    public boolean esceVettura(Vettura v) {
-		        return vetturePresenti.remove(v);
-		    }
+	public void promozione(int codice, int oreGratuite) {
+		for (Vettura v : vetturePresenti) {
+			int ultimeDueCifre = v.getTarga() % 100;
+			if (ultimeDueCifre == codice) {
+				short nuovaScadenza = (short) ((v.getOraScadenza() + oreGratuite) % 24);
+				v.setOraScadenza(nuovaScadenza);
+			}
+		}
+	}
 
-		    public void aggiornaOra() {
-		        oraCorrente = (oraCorrente + 1) % 24;
-		        Iterator<Vettura> iterator = vetturePresenti.iterator();
-		        while (iterator.hasNext()) {
-		            Vettura v = iterator.next();
-		            if (v.getOraScadenza() <= oraCorrente) {
-		                vettureRimosse.add(v);
-		                iterator.remove();
-		            }
-		        }
-		    }
+	public ArrayList<Vettura> statVetture() {
+		ArrayList<Vettura> result = new ArrayList<>();
+		int maxOre = -1;
 
-		    public void promozione(int codice, int oreGratuite) {
-		        for (Vettura v : vetturePresenti) {
-		            int ultimeDueCifre = v.getTarga() % 100;
-		            if (ultimeDueCifre == codice) {
-		                short nuovaScadenza = (short)((v.getOraScadenza() + oreGratuite) % 24);
-		                v.setOraScadenza(nuovaScadenza);
-		            }
-		        }
-		    }
-
-		    public ArrayList<Vettura> statVetture() {
-		        ArrayList<Vettura> result = new ArrayList<>();
-		        int maxOre = -1;
-
-		        for (Vettura v : vetturePresenti) {
-		            int ore = v.orePagate();
-		            if (ore > maxOre) {
-		                result.clear();
-		                result.add(v);
-		                maxOre = ore;
-		            } else if (ore == maxOre) {
-		                result.add(v);
-		            }
-		        }
-
-		        return result;
-		    }
-
-		    // Facoltativo: per visualizzare lo stato
-		    public void stampaStato() {
-		        System.out.println("Ora Corrente: " + oraCorrente);
-		        System.out.println("Vetture Presenti: " + vetturePresenti.size());
-		        for (Vettura v : vetturePresenti) {
-		            System.out.println(v);
-		        }
-		        System.out.println("Vetture Rimosse: " + vettureRimosse.size());
-		    }
+		for (Vettura v : vetturePresenti) {
+			int ore = v.orePagate();
+			if (ore > maxOre) {
+				result.clear();
+				result.add(v);
+				maxOre = ore;
+			} else if (ore == maxOre) {
+				result.add(v);
+			}
 		}
 
+		return result;
+	}
+
+	// Facoltativo: per visualizzare lo stato
+	public void stampaStato() {
+		System.out.println("Ora Corrente: " + oraCorrente);
+		System.out.println("Vetture Presenti: " + vetturePresenti.size());
+		for (Vettura v : vetturePresenti) {
+			System.out.println(v);
+		}
+		System.out.println("Vetture Rimosse: " + vettureRimosse.size());
 	}
 
 }
