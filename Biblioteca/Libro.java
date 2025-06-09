@@ -1,16 +1,16 @@
 package Biblioteca;
 
-public class Libro {
+
 	public String isbn;
 	private String titolo;
 	private Abbonato utente;
 	private Data dataScadenza;
 
-	public Libro(String titolo, Abbonato utente localDate data) {
+	public Libro (String titolo, Abbonato utente localDate data) {
 		this.titolo = titolo;
 		this.utente = null;
 		this.dataScadenza = null;
-	}
+				}
 
 	public String getTitolo() {
 		return titolo;
@@ -46,4 +46,3 @@ public class Libro {
 			return "Titolo: " + titolo + " | Disponibile";
 		}
 	}
-}

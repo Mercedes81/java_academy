@@ -1,10 +1,24 @@
 package Dia_10;
 
-public class Auto {
+//Auto.java
+public class Auto extends Veicolo {
+	private int numeroPorte;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public Auto(String targa, String modello, String marca, int numeroPosti, int numeroPorte) {
+		super(targa, modello, marca, numeroPosti);
+		this.numeroPorte = numeroPorte;
 	}
 
+	public int getNumeroPorte() {
+		return numeroPorte;
+	}
+
+	public void setNumeroPorte(int numeroPorte) {
+		this.numeroPorte = numeroPorte;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " Auto [numeroPorte=" + numeroPorte + "]";
+	}
 }

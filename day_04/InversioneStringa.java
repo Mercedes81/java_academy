@@ -1,4 +1,4 @@
-package day_04;
+package Day_04;
 
 /*Scrivi un programma Java che inverte una stringa data
  */

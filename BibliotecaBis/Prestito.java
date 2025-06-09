@@ -2,6 +2,8 @@ package BibliotecaBis;
 
 import java.time.LocalDateTime;
 
+import Biblioteca.Abbonato;
+
 public class Prestito {
 	private Abbonato abbonato;
 	private Libro libro;
@@ -48,6 +50,4 @@ public class Prestito {
 		return "Prestito [abbonato=" + this.abbonato + ", libro=" + this.libro + ", dataPrestito=" + this.dataPrestito
 				+ "]";
 	}
-}
-
 }

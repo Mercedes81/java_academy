@@ -1,4 +1,4 @@
-package day_06;
+package Day_06;
 
 /* Scrivi un programma Java che verifica se un numero dato è primo o meno
  */

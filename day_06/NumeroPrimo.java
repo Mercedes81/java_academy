@@ -1,4 +1,4 @@
-package day_06;
+package Day_06;
 
 public class NumeroPrimo {
 

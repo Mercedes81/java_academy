@@ -1,1 +1,1 @@
-package day_06;
+package Day_06;

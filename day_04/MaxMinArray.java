@@ -1,4 +1,4 @@
-package day_04;
+package Day_04;
 
 /* Scrivi un programma Java che calcola il valore massimo e il valore minimo 
 presenti in un array di interi

@@ -9,6 +9,6 @@ public class PersonaTest {
 		Donna eva = new Donna("CF2", "Eva", "Verdi", LocalDate.of(1982, 7, 12), "Firenze", "rosa");
 		System.out.println(adamo.toString());
 		System.out.println(eva.toString());
-		Persona[] persona = persona;
+		String persona = persona.toString();
 	}
 }

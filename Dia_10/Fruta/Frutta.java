@@ -1,6 +1,6 @@
-package Dia_09;
+package Dia_10.Fruta;
 
-public class Car {
+public class Frutta {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

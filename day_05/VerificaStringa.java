@@ -1,4 +1,4 @@
-package day_05;
+package Day_05;
 
 /* Scrivi un programma Java che calcola il numero di occorrenze di una lettera 
 specificata all'interno di una stringa data
