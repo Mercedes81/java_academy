@@ -1,4 +1,4 @@
- README.md
+git add .
 git init
 git add README.md
 git commit -m "first commit"
@@ -7,8 +7,8 @@ git remote add origin https://github.com/Mercedes81/java_academy.git
 git push -u origin main
 
 …or push an existing repository from the command line
-git remote add origin https://github.com/Mercedes81/java_academy.git
+git remote add origin 
 git branch -M main
-git push -u origin maingit add .
+git push -u origin main git add .
 
 https://github.com/Mercedes81/java_academy.git
